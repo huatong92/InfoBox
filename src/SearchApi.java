@@ -30,6 +30,7 @@ public class SearchApi {
 	    	GenericUrl url = new GenericUrl("https://www.googleapis.com/freebase/v1/search");
 	    	url.put("query", query);
 	    	url.put("key", key);
+	    	url.put("limit", "20");
 	    	HttpRequest request = requestFactory.buildGetRequest(url);
 	    	HttpResponse httpResponse = request.execute();
 	    	JSONObject response = (JSONObject)parser.parse(httpResponse.parseAsString());
